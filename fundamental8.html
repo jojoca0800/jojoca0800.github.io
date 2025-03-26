@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="fundamental1.css">
+    <title>Lista de E-mails</title>
+</head>
+<body>
+    <header>
+        <div class="form-group">
+            <label for="paginaSelect">Escolha uma página:</label>
+            <br>
+            <select id="paginaSelect" onchange="redirecionarPagina()">
+                <option value="">-- Selecione --</option>
+                <option id="texto" value="geral.html">Geral</option>
+                <option id="texto" value="fundamental1.html">1º Fundamental</option>
+                <option id="texto" value="fundamental2.html">2º Fundamental</option>
+                <option id="texto" value="fundamental3.html">3º Fundamental</option>
+                <option id="texto" value="fundamental4.html">4º Fundamental</option>
+                <option id="texto" value="fundamental5.html">5º Fundamental</option>
+                <option id="texto" value="fundamental6.html">6º Fundamental</option>
+                <option id="texto" value="fundamental7.html">7º Fundamental</option>
+                <option id="texto" value="fundamental8.html">8º Fundamental</option>
+                <option id="texto" value="fundamental9.html">9º Fundamental</option>
+                <option id="texto" value="ensinomedio1.html">1º Ens. Medio</option>
+                <option id="texto" value="ensinomedio2.html">2º Ens. Medio</option>
+                <option id="texto" value="ensinomedio3.html">3º Ens. Medio</option>
+                 </select>
+        
+            <script>
+                function redirecionarPagina() {
+                    const select = document.getElementById('paginaSelect');
+                    const url = select.value; // Obtém o valor selecionado (URL)
+                    if (url) {
+                        window.location.href = url; // Redireciona para a página
+                    }
+                }
+            </script>
+        </div>
+    </header>
+    <section id="email">
+        <h2>SELECIONE OS EMAILS: 8° ANO Fundamental</h2>
+        <button id="lixo" onclick="desmarcarTodos()">🚮</button>
+        <button id="removerSelecionados" onclick="removerSelecionados()">Remover Selecionados</button>
+        <button id="todos" onclick="marcarTodos()">✅</button>
+        <br><br>
+        <button onclick="redirecionarGmail()">Enviar E-mail</button>
+       
+        <br><br>
+        <table>
+            <thead>
+                <tr>
+                    <th>Nomes</th>
+                    <th>Email</th>
+                    <th>Turma</th>
+                </tr>
+            </thead>
+            <tbody id="emailTableBody">
+            </tbody>
+        </table>
+        <br><br><br>
+        <script>
+            function desmarcarTodos() {
+                document.querySelectorAll('.email').forEach(checkbox => {
+                    checkbox.checked = false;
+                });
+            }
+
+            function marcarTodos() {
+                document.querySelectorAll('.email').forEach(checkbox => {
+                    checkbox.checked = true;
+                });
+            }
+            function removerSelecionados() {
+    const checkboxes = document.querySelectorAll('.email:checked');
+    const emails = JSON.parse(localStorage.getItem('emails')) || [];
+
+    checkboxes.forEach(checkbox => {
+        const emailValue = checkbox.value;
+        const row = checkbox.closest('tr'); // Encontra a linha associada ao checkbox
+        row.remove(); // Remove a linha da tabela
+
+        // Atualiza o array de emails no localStorage
+        const index = emails.findIndex(email => email.email === emailValue);
+        if (index !== -1) {
+            emails.splice(index, 1); // Remove o email do array
+        }
+    });
+
+    // Salva o array atualizado no localStorage
+    localStorage.setItem('emails', JSON.stringify(emails));
+}
+
+
+            function carregarDados() {
+                const tableBody = document.getElementById('emailTableBody');
+                const emails = JSON.parse(localStorage.getItem('emails')) || [];
+
+                const emailsTurma11 = emails.filter(email => email.turma === "81");
+
+                emailsTurma11.forEach(({ name, email, turma}) => {
+                    const newRow = document.createElement('tr');
+                    newRow.innerHTML = `
+                        <td>${name}</td>
+                        <td>
+                            <input type="checkbox" class="email" value="${email}"> ${email}
+                        </td>
+                        <td>${turma}</td>
+                    `;
+                    tableBody.appendChild(newRow);
+                });
+            }
+
+            document.addEventListener('DOMContentLoaded', carregarDados);
+
+            function redirecionarGmail() {
+            const emailsSelecionados = [];
+            document.querySelectorAll('.email:checked').forEach(checkbox => {
+                emailsSelecionados.push(checkbox.value);
+            });
+
+            if (emailsSelecionados.length === 0) {
+                alert("Selecione pelo menos um e-mail.");
+                return;
+            }
+
+            const mailtoLink = `https://mail.google.com/mail/?view=cm&fs=1&to=${encodeURIComponent(emailsSelecionados.join(','))}`;
+            window.open(mailtoLink, '_blank');
+        }
+        </script>
+    </section>
+</body>
+</html>

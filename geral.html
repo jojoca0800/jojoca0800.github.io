@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="geral.css">
+    <title>Lista de E-mails</title>
+    <script>
+
+        function redirecionarPagina() {
+            const select = document.getElementById('paginaSelect');
+            const url = select.value; 
+            if (url) {
+                window.location.href = url; 
+            }
+        }
+
+        function adicionarEmail() {
+            const nameInput = document.getElementById('newName');
+            const emailInput = document.getElementById('newEmail');
+            const turmaSelect = document.getElementById('newTurma');
+
+            const name = nameInput.value.trim();
+            const email = emailInput.value.trim();
+            const turma = turmaSelect.value.trim();
+
+            if (name === "" || email === "" || turma === "ㅤㅤ") {
+                alert("Por favor, preencha todos os campos.");
+                return;
+            }
+
+            const tableBody = document.getElementById('emailTableBody');
+            const newRow = document.createElement('tr');
+            newRow.innerHTML = `
+                <td>${name}</td>
+                <td><input type="checkbox" class="email" value="${email}"> ${email}</td>
+                <td>${turma}</td>
+            `;
+            tableBody.appendChild(newRow);
+
+            // Armazenar os dados no Local Storage
+            const emails = JSON.parse(localStorage.getItem('emails')) || [];
+            emails.push({ name, email, turma });
+            localStorage.setItem('emails', JSON.stringify(emails));
+
+            // Limpar os campos após adicionar
+            nameInput.value = "";
+            emailInput.value = "";
+            turmaSelect.value = "ㅤㅤ";
+        }
+
+        function redirecionarGmail() {
+            const emailsSelecionados = [];
+            document.querySelectorAll('.email:checked').forEach(checkbox => {
+                emailsSelecionados.push(checkbox.value);
+            });
+
+            if (emailsSelecionados.length === 0) {
+                alert("Selecione pelo menos um e-mail.");
+                return;
+            }
+
+            const mailtoLink = `https://mail.google.com/mail/?view=cm&fs=1&to=${encodeURIComponent(emailsSelecionados.join(','))}`;
+            window.open(mailtoLink, '_blank');
+        }
+
+        function desmarcarTodos() {
+            document.querySelectorAll('.email').forEach(checkbox => {
+                checkbox.checked = false;
+            });
+        }
+
+        function marcarTodos() {
+            document.querySelectorAll('.email').forEach(checkbox => {
+                checkbox.checked = true;
+            });
+        }
+
+        function removerSelecionados() {
+            const checkboxes = document.querySelectorAll('.email:checked');
+            const emails = JSON.parse(localStorage.getItem('emails')) || [];
+
+            if (checkboxes.length === 0) {
+                alert("Selecione pelo menos um e-mail para remover.");
+                return;
+            }
+
+            if (confirm("Deseja realmente remover os emails selecionados?")) {
+                checkboxes.forEach(checkbox => {
+                    const email = checkbox.value;
+                    const row = checkbox.closest('tr');
+                    row.remove(); // Remove a linha da tabela
+
+                    // Remove o email do localStorage
+                    const index = emails.findIndex(emailObj => emailObj.email === email);
+                    if (index !== -1) {
+                        emails.splice(index, 1); // Remove o email do array
+                    }
+                });
+
+                // Atualiza o localStorage com os dados restantes
+                localStorage.setItem('emails', JSON.stringify(emails));
+                alert("Emails selecionados foram removidos com sucesso!");
+            }
+        }
+
+        function carregarDados() {
+            const tableBody = document.getElementById('emailTableBody');
+            tableBody.innerHTML = ""; // Limpa a tabela antes de carregar os dados
+
+            // Obter os dados salvos no LocalStorage
+            const emails = JSON.parse(localStorage.getItem('emails')) || [];
+
+            // Adicionar os emails na tabela
+            emails.forEach(({ name, email, turma }) => {
+                const newRow = document.createElement('tr');
+                newRow.innerHTML = `
+                    <td>${name}</td>
+                    <td><input type="checkbox" class="email" value="${email}"> ${email}</td>
+                    <td>${turma}</td>
+                `;
+                tableBody.appendChild(newRow);
+            });
+        }
+
+        document.addEventListener('DOMContentLoaded', carregarDados);
+    </script>
+</head>
+<body>
+    <header>
+        <div class="form-group">
+            <label for="paginaSelect">Escolha uma página:</label>
+            <br>
+            <select id="paginaSelect" onchange="redirecionarPagina()">
+                <option value="">-- Selecione --</option>
+                <option id="texto" value="geral.html">Geral</option>
+                <option id="texto" value="fundamental1.html">1º Fundamental</option>
+                <option id="texto" value="fundamental2.html">2º Fundamental</option>
+                <option id="texto" value="fundamental3.html">3º Fundamental</option>
+                <option id="texto" value="fundamental4.html">4º Fundamental</option>
+                <option id="texto" value="fundamental5.html">5º Fundamental</option>
+                <option id="texto" value="fundamental6.html">6º Fundamental</option>
+                <option id="texto" value="fundamental7.html">7º Fundamental</option>
+                <option id="texto" value="fundamental8.html">8º Fundamental</option>
+                <option id="texto" value="fundamental9.html">9º Fundamental</option>
+                <option id="texto" value="ensinomedio1.html">1º Ens. Medio</option>
+                <option id="texto" value="ensinomedio2.html">2º Ens. Medio</option>
+                <option id="texto" value="ensinomedio3.html">3º Ens. Medio</option>
+                
+            </select>
+        </div>
+    </header>
+
+    <section id="email">
+        <h2>ADICIONE OS EMAILS: GERAL</h2>
+
+        <input type="text" id="newName" placeholder="Digite um nome">
+        <br><br>
+        <input type="text" id="newEmail" placeholder="Digite um e-mail">
+        <br>
+        <div class="form-group">
+            <br>
+            <select name="Categoria" id="newTurma" required>
+                <br>
+                <option id="texto" value="ㅤㅤ">Selecione a turma</option>
+                <option id="texto" value="11">11</option>
+                <option id="texto" value="21">21</option>
+                <option id="texto" value="31">31</option>
+                <option id="texto" value="41">41</option>
+                <option id="texto" value="51">51</option>
+                <option id="texto" value="61">61</option>
+                <option id="texto" value="71">71</option>
+                <option id="texto" value="81">81</option>
+                <option id="texto" value="91">91</option>
+                <option id="texto" value="111">111</option>
+                <option id="texto" value="112">112</option>
+                <option id="texto" value="113">113</option>
+            </select>
+        </div>
+
+        <button onclick="adicionarEmail()">Adicionar E-mail</button>
+        <br><br>
+        <button onclick="redirecionarGmail()">Enviar E-mail</button>
+        <br><br>
+        <button id="lixo" onclick="desmarcarTodos()">🚮</button>
+
+        <button onclick="removerSelecionados()">Excluir Selecionados</button>
+        <button id="todos" onclick="marcarTodos()">✅</button>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Nomes</th>
+                    <th>Email</th>
+                    <th>Turma</th>
+                </tr>
+            </thead>
+            <tbody id="emailTableBody">
+            </tbody>
+        </table>
+        <br><br>
+    </section>
+</body>
+</html>

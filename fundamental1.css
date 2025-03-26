@@ -1,0 +1,146 @@
+
+body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: rgb(44, 38, 38);
+}
+header{
+    height: 100px;
+    background-color: #626262;
+    width: 100%;
+    align-items: center;
+    text-align: center;
+    box-shadow: 0 0 15px 5px rgba(0, 0, 0, 0.7);
+}
+h1 {
+    margin-top: 25px;
+    color: rgb(255, 255, 255);
+    font-family: monospace;
+}
+h2 {
+    color: rgb(255, 255, 255);
+    font-family: monospace;
+}
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+.form-group {
+    margin-bottom: 15px;
+    width: 100%;
+}
+.form-group label {
+    margin-top: 12px;
+    display: block;
+    text-align: center;
+    font-size: 18px;
+    font-weight: bold;
+    font-family: monospace;
+}
+#texto{
+    font-family: monospace;
+}
+#paginaSelect{
+    width: 210px;
+    height: 28px;
+    text-align: center;
+}
+td{
+    color: #ffffff;
+    text-align: left;
+}
+th{
+    color: #fff;
+
+}
+table {
+    width: 60%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    text-align: center;
+    margin-left: 20%;
+ 
+}
+table td, table td {
+    text-align: left;
+    padding: 10px;
+    border: 1px solid #ddd;
+}
+table th, table th {
+    text-align: left;
+    padding: 10px;
+    border: 1px solid #ddd;
+}
+table th {
+    background-color:  #141414;
+    color: white;
+    font-weight: bold;
+}
+table td{
+    background-color: #141414;
+}
+
+#email {
+    text-align: center;
+    height: auto;
+    background: rgba(0, 0, 0, 0.57);
+    margin-top: 50px;
+    margin-bottom: 50px;
+    width: 720px;
+    padding: 20px;
+    border-radius: 20px;
+    border: 2px solid #626262;
+    box-shadow: 0 0 15px 5px rgba(0, 0, 0, 0.7);
+}
+#emailList {
+    text-align: center;
+    padding: 0;
+    align-items: center;
+}
+
+li {
+    text-decoration: none;
+    color: white;
+    align-items: left;
+    gap: 10px;
+    margin-bottom: 10px;
+    list-style-type: none;
+}
+input[type=checkbox] {
+    width: 30px;
+  }
+input[type="text"] {
+    width: 80%;
+    max-width: 300px;
+    padding: 10px;
+    border: 4px solid #ffffff;
+    border-radius: 5px;
+    background-color: #fff;
+    color: #000;
+}
+button {
+    padding: 10px 20px;
+    background-color: #dfdede;
+    color: #000000;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+button:hover {
+    background-color: #fff;
+    color: #000;
+}
+#lixo{
+    float: center;
+    margin-right:30px;
+}
+#todos{
+    float: center;
+    margin-left: 30px;
+}

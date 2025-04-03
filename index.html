@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="geral.css">
+    <title>Lista de E-mails</title>
+</head>
+<body> 
+  <div id="particles-js"></div> <!-- stats - count particles -->
+  <div class="count-particles"> <span class="js-count-particles">--</span></div> <!-- particles.js lib - https://github.com/VincentGarreau/particles.js -->
+  <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script> <!-- stats.js lib -->
+  <script src="https://threejs.org/examples/js/libs/stats.min.js"></script>
+      
+    <header>
+        <div class="form-group">
+            <label for="paginaSelect">Navegue entre as Páginas:</label>
+            <select id="paginaSelect">
+                <option value="">-- Escolha uma Página --</option>
+                <option value="index.html">Geral</option>
+                <option value="fundamental1.html"> Turma 61 </option>
+                <option value="fundamental2.html"> Turma 71 </option>
+                <option value="fundamental3.html"> Turma 81 </option>
+                <option value="fundamental4.html"> Turma 82 </option>
+                <option value="fundamental5.html"> Turma 91 </option>
+                <option value="fundamental6.html"> Turma 111 </option>
+                <option value="fundamental7.html"> Turma 121 </option>
+                <option value="fundamental8.html"> Turma 131 </option>
+            </select>
+        </div>
+    </header>
+
+    <section id="email">
+        <h1>Gerenciador de E-mails</h1> <!-- Título maior e mais destacado -->
+        <p>Adicione e gerencie os e-mails de forma simples e organizada.</p> <!-- Texto introdutório -->
+
+        <div class="input-group">
+            <input type="text" id="newName" placeholder="Digite o nome">
+            <input type="text" id="newEmail" placeholder="Digite o e-mail">
+            <select name="Categoria" id="newTurma" required>
+                <option value="ㅤㅤ">Selecione a Turma</option>
+                <option value="61">61</option>
+                <option value="71">71</option>
+                <option value="81">81</option>
+                <option value="82">82</option>
+                <option value="91">91</option>
+                <option value="111">111</option>
+                <option value="121">121</option>
+                <option value="131">131</option>
+            </select>
+        </div>
+        <img class="input-group2" src="Logoverdecom-removebg-preview.png"></img>
+<br><br><br>
+        <div class="button-group">
+            <button class="btn-primary" onclick="adicionarEmail()">Adicionar E-mail</button>
+            <button class="btn-primary" onclick="redirecionarGmail()">Enviar E-mail</button>
+            <button class="btn-secondary" onclick="marcarTodos()">Marcar Todos ✅</button>
+            <button class="btn-secondary" onclick="desmarcarTodos()">Desmarcar Todos ⬜</button>
+            <button class="btn-danger" onclick="removerSelecionados()">Excluir Email Selecionado</button>
+            <p>( A o apagar todos os emails de um determinado usuario, o usurio sera excluido automaticamente.)</p>
+        </div>
+        <table>
+            <thead>
+                <tr>
+                    <th>Nome</th>
+                    <th>E-mail</th>
+                    <th>Turma</th>
+                </tr>
+            </thead>
+            <tbody id="emailTableBody">
+                <!-- Turma 61 -->
+                <tr><td>Ana Carvalho2</td><td><input type="checkbox" class="email" value="ana.carvalho2@exemplo.com"> ana.carvalho2@exemplo.com</td><td>61</td></tr>
+                <tr><td>Beatriz Martins2</td><td><input type="checkbox" class="email" value="beatriz.martins2@exemplo.com"> beatriz.martins2@exemplo.com</td><td>61</td></tr>
+                <tr><td>Carlos Azevedo2</td><td><input type="checkbox" class="email" value="carlos.azevedo2@exemplo.com"> carlos.azevedo2@exemplo.com</td><td>61</td></tr>
+                <tr><td>Daniel Castro2</td><td><input type="checkbox" class="email" value="daniel.castro2@exemplo.com"> daniel.castro2@exemplo.com</td><td>61</td></tr>
+                <tr><td>Eduardo Borges2</td><td><input type="checkbox" class="email" value="eduardo.borges2@exemplo.com"> eduardo.borges2@exemplo.com</td><td>61</td></tr>
+                <tr><td>Fernanda Vieira2</td><td><input type="checkbox" class="email" value="fernanda.vieira2@exemplo.com"> fernanda.vieira2@exemplo.com</td><td>61</td></tr>
+                <tr><td>Gabriel Moreira2</td><td><input type="checkbox" class="email" value="gabriel.moreira2@exemplo.com"> gabriel.moreira2@exemplo.com</td><td>61</td></tr>
+                <tr><td>Helena Pinto2</td><td><input type="checkbox" class="email" value="helena.pinto2@exemplo.com"> helena.pinto2@exemplo.com</td><td>61</td></tr>
+                <tr><td>Isabela Nunes2</td><td><input type="checkbox" class="email" value="isabela.nunes2@exemplo.com"> isabela.nunes2@exemplo.com</td><td>61</td></tr>
+                <tr><td>João Correia2</td><td><input type="checkbox" class="email" value="joao.correia2@exemplo.com"> joao.correia2@exemplo.com</td><td>61</td></tr>
+                <tr><td>Karina Lopes2</td><td><input type="checkbox" class="email" value="karina.lopes2@exemplo.com"> karina.lopes2@exemplo.com</td><td>61</td></tr>
+                <tr><td>Lucas Farias2</td><td><input type="checkbox" class="email" value="lucas.farias2@exemplo.com"> lucas.farias2@exemplo.com</td><td>61</td></tr>
+                <tr><td>Mariana Campos2</td><td><input type="checkbox" class="email" value="mariana.campos2@exemplo.com"> mariana.campos2@exemplo.com</td><td>61</td></tr>
+                <tr><td>Natália Moura2</td><td><input type="checkbox" class="email" value="natalia.moura2@exemplo.com"> natalia.moura2@exemplo.com</td><td>61</td></tr>
+                <tr><td>Otávio Rodrigues2</td><td><input type="checkbox" class="email" value="otavio.rodrigues2@exemplo.com"> otavio.rodrigues2@exemplo.com</td><td>61</td></tr>
+                <tr><td>Paula Freire2</td><td><input type="checkbox" class="email" value="paula.freire2@exemplo.com"> paula.freire2@exemplo.com</td><td>61</td></tr>
+                <tr><td>Rafael Nogueira2</td><td><input type="checkbox" class="email" value="rafael.nogueira2@exemplo.com"> rafael.nogueira2@exemplo.com</td><td>61</td></tr>
+                <tr><td>Sofia Prado2</td><td><input type="checkbox" class="email" value="sofia.prado2@exemplo.com"> sofia.prado2@exemplo.com</td><td>61</td></tr>
+                <tr><td>Thiago Batista2</td><td><input type="checkbox" class="email" value="thiago.batista2@exemplo.com"> thiago.batista2@exemplo.com</td><td>61</td></tr>
+                <tr><td>Vitória Duarte2</td><td><input type="checkbox" class="email" value="vitoria.duarte2@exemplo.com"> vitoria.duarte2@exemplo.com</td><td>61</td></tr>
+                <tr><td>Alexandre Pires2</td><td><input type="checkbox" class="email" value="alexandre.pires2@exemplo.com"> alexandre.pires2@exemplo.com</td><td>61</td></tr>
+                <tr><td>Bruna Reis2</td><td><input type="checkbox" class="email" value="bruna.reis2@exemplo.com"> bruna.reis2@exemplo.com</td><td>61</td></tr>
+                <tr><td>Cláudio Cunha2</td><td><input type="checkbox" class="email" value="claudio.cunha2@exemplo.com"> claudio.cunha2@exemplo.com</td><td>61</td></tr>
+                <tr><td>Débora Viana2</td><td><input type="checkbox" class="email" value="debora.viana2@exemplo.com"> debora.viana2@exemplo.com</td><td>61</td></tr>
+                <tr><td>Evandro Leite2</td><td><input type="checkbox" class="email" value="evandro.leite2@exemplo.com"> evandro.leite2@exemplo.com</td><td>61</td></tr>
+                <tr><td>Fábio Matos2</td><td><input type="checkbox" class="email" value="fabio.matos2@exemplo.com"> fabio.matos2@exemplo.com</td><td>61</td></tr>
+                <tr><td>Gustavo Dantas2</td><td><input type="checkbox" class="email" value="gustavo.dantas2@exemplo.com"> gustavo.dantas2@exemplo.com</td><td>61</td></tr>
+                <tr><td>Ingrid Lobo2</td><td><input type="checkbox" class="email" value="ingrid.lobo2@exemplo.com"> ingrid.lobo2@exemplo.com</td><td>61</td></tr>
+                <tr><td>Juliana Franco2</td><td><input type="checkbox" class="email" value="juliana.franco2@exemplo.com"> juliana.franco2@exemplo.com</td><td>61</td></tr>
+                <tr><td>Leonardo Lima2</td><td><input type="checkbox" class="email" value="leonardo.lima2@exemplo.com"> leonardo.lima2@exemplo.com</td><td>61</td></tr>
+            
+                <!-- Turma 71 -->
+                <tr><td>Ana Silva3</td><td><input type="checkbox" class="email" value="ana.silva3@exemplo.com"> ana.silva3@exemplo.com</td><td>71</td></tr>
+                <tr><td>Beatriz Costa3</td><td><input type="checkbox" class="email" value="beatriz.costa3@exemplo.com"> beatriz.costa3@exemplo.com</td><td>71</td></tr>
+                <tr><td>Carlos Santos3</td><td><input type="checkbox" class="email" value="carlos.santos3@exemplo.com"> carlos.santos3@exemplo.com</td><td>71</td></tr>
+                <tr><td>Daniel Lima3</td><td><input type="checkbox" class="email" value="daniel.lima3@exemplo.com"> daniel.lima3@exemplo.com</td><td>71</td></tr>
+                <tr><td>Eduardo Pereira3</td><td><input type="checkbox" class="email" value="eduardo.pereira3@exemplo.com"> eduardo.pereira3@exemplo.com</td><td>71</td></tr>
+                <tr><td>Fernanda Oliveira3</td><td><input type="checkbox" class="email" value="fernanda.oliveira3@exemplo.com"> fernanda.oliveira3@exemplo.com</td><td>71</td></tr>
+                <tr><td>Gabriel Almeida3</td><td><input type="checkbox" class="email" value="gabriel.almeida3@exemplo.com"> gabriel.almeida3@exemplo.com</td><td>71</td></tr>
+                <tr><td>Helena Souza3</td><td><input type="checkbox" class="email" value="helena.souza3@exemplo.com"> helena.souza3@exemplo.com</td><td>71</td></tr>
+                <tr><td>Isabela Ferreira3</td><td><input type="checkbox" class="email" value="isabela.ferreira3@exemplo.com"> isabela.ferreira3@exemplo.com</td><td>71</td></tr>
+                <tr><td>João Mendes3</td><td><input type="checkbox" class="email" value="joao.mendes3@exemplo.com"> joao.mendes3@exemplo.com</td><td>71</td></tr>
+                <tr><td>Karina Rocha3</td><td><input type="checkbox" class="email" value="karina.rocha3@exemplo.com"> karina.rocha3@exemplo.com</td><td>71</td></tr>
+                <tr><td>Lucas Barbosa3</td><td><input type="checkbox" class="email" value="lucas.barbosa3@exemplo.com"> lucas.barbosa3@exemplo.com</td><td>71</td></tr>
+                <tr><td>Mariana Gomes3</td><td><input type="checkbox" class="email" value="mariana.gomes3@exemplo.com"> mariana.gomes3@exemplo.com</td><td>71</td></tr>
+                <tr><td>Natália Dias3</td><td><input type="checkbox" class="email" value="natalia.dias3@exemplo.com"> natalia.dias3@exemplo.com</td><td>71</td></tr>
+                <tr><td>Otávio Ribeiro3</td><td><input type="checkbox" class="email" value="otavio.ribeiro3@exemplo.com"> otavio.ribeiro3@exemplo.com</td><td>71</td></tr>
+                <tr><td>Paula Teixeira3</td><td><input type="checkbox" class="email" value="paula.teixeira3@exemplo.com"> paula.teixeira3@exemplo.com</td><td>71</td></tr>
+                <tr><td>Rafael Carvalho3</td><td><input type="checkbox" class="email" value="rafael.carvalho3@exemplo.com"> rafael.carvalho3@exemplo.com</td><td>71</td></tr>
+                <tr><td>Sofia Martins3</td><td><input type="checkbox" class="email" value="sofia.martins3@exemplo.com"> sofia.martins3@exemplo.com</td><td>71</td></tr>
+                <tr><td>Thiago Azevedo3</td><td><input type="checkbox" class="email" value="thiago.azevedo3@exemplo.com"> thiago.azevedo3@exemplo.com</td><td>71</td></tr>
+                <tr><td>Vitória Castro3</td><td><input type="checkbox" class="email" value="vitoria.castro3@exemplo.com"> vitoria.castro3@exemplo.com</td><td>71</td></tr>
+                <tr><td>Alexandre Borges3</td><td><input type="checkbox" class="email" value="alexandre.borges3@exemplo.com"> alexandre.borges3@exemplo.com</td><td>71</td></tr>
+                <tr><td>Bruna Vieira3</td><td><input type="checkbox" class="email" value="bruna.vieira3@exemplo.com"> bruna.vieira3@exemplo.com</td><td>71</td></tr>
+                <tr><td>Cláudio Moreira3</td><td><input type="checkbox" class="email" value="claudio.moreira3@exemplo.com"> claudio.moreira3@exemplo.com</td><td>71</td></tr>
+                <tr><td>Débora Pinto3</td><td><input type="checkbox" class="email" value="debora.pinto3@exemplo.com"> debora.pinto3@exemplo.com</td><td>71</td></tr>
+                <tr><td>Evandro Nunes3</td><td><input type="checkbox" class="email" value="evandro.nunes3@exemplo.com"> evandro.nunes3@exemplo.com</td><td>71</td></tr>
+                <tr><td>Fábio Correia3</td><td><input type="checkbox" class="email" value="fabio.correia3@exemplo.com"> fabio.correia3@exemplo.com</td><td>71</td></tr>
+                <tr><td>Gustavo Lopes3</td><td><input type="checkbox" class="email" value="gustavo.lopes3@exemplo.com"> gustavo.lopes3@exemplo.com</td><td>71</td></tr>
+                <tr><td>Ingrid Farias3</td><td><input type="checkbox" class="email" value="ingrid.farias3@exemplo.com"> ingrid.farias3@exemplo.com</td><td>71</td></tr>
+                <tr><td>Juliana Campos3</td><td><input type="checkbox" class="email" value="juliana.campos3@exemplo.com"> juliana.campos3@exemplo.com</td><td>71</td></tr>
+                <tr><td>Leonardo Moura3</td><td><input type="checkbox" class="email" value="leonardo.moura3@exemplo.com"> leonardo.moura3@exemplo.com</td><td>71</td></tr>
+            
+                <!-- Turma 81 -->
+                <tr><td>Ana Rodrigues3</td><td><input type="checkbox" class="email" value="ana.rodrigues3@exemplo.com"> ana.rodrigues3@exemplo.com</td><td>81</td></tr>
+                <tr><td>Beatriz Freire3</td><td><input type="checkbox" class="email" value="beatriz.freire3@exemplo.com"> beatriz.freire3@exemplo.com</td><td>81</td></tr>
+                <tr><td>Carlos Nogueira3</td><td><input type="checkbox" class="email" value="carlos.nogueira3@exemplo.com"> carlos.nogueira3@exemplo.com</td><td>81</td></tr>
+                <tr><td>Daniel Prado3</td><td><input type="checkbox" class="email" value="daniel.prado3@exemplo.com"> daniel.prado3@exemplo.com</td><td>81</td></tr>
+                <tr><td>Eduardo Batista3</td><td><input type="checkbox" class="email" value="eduardo.batista3@exemplo.com"> eduardo.batista3@exemplo.com</td><td>81</td></tr>
+                <tr><td>Fernanda Duarte3</td><td><input type="checkbox" class="email" value="fernanda.duarte3@exemplo.com"> fernanda.duarte3@exemplo.com</td><td>81</td></tr>
+                <tr><td>Gabriel Pires3</td><td><input type="checkbox" class="email" value="gabriel.pires3@exemplo.com"> gabriel.pires3@exemplo.com</td><td>81</td></tr>
+                <tr><td>Helena Reis3</td><td><input type="checkbox" class="email" value="helena.reis3@exemplo.com"> helena.reis3@exemplo.com</td><td>81</td></tr>
+                <tr><td>Isabela Cunha3</td><td><input type="checkbox" class="email" value="isabela.cunha3@exemplo.com"> isabela.cunha3@exemplo.com</td><td>81</td></tr>
+                <tr><td>João Viana3</td><td><input type="checkbox" class="email" value="joao.viana3@exemplo.com"> joao.viana3@exemplo.com</td><td>81</td></tr>
+                <tr><td>Karina Leite3</td><td><input type="checkbox" class="email" value="karina.leite3@exemplo.com"> karina.leite3@exemplo.com</td><td>81</td></tr>
+                <tr><td>Lucas Matos3</td><td><input type="checkbox" class="email" value="lucas.matos3@exemplo.com"> lucas.matos3@exemplo.com</td><td>81</td></tr>
+                <tr><td>Mariana Dantas3</td><td><input type="checkbox" class="email" value="mariana.dantas3@exemplo.com"> mariana.dantas3@exemplo.com</td><td>81</td></tr>
+                <tr><td>Natália Lobo3</td><td><input type="checkbox" class="email" value="natalia.lobo3@exemplo.com"> natalia.lobo3@exemplo.com</td><td>81</td></tr>
+                <tr><td>Otávio Franco3</td><td><input type="checkbox" class="email" value="otavio.franco3@exemplo.com"> otavio.franco3@exemplo.com</td><td>81</td></tr>
+                <tr><td>Paula Lima3</td><td><input type="checkbox" class="email" value="paula.lima3@exemplo.com"> paula.lima3@exemplo.com</td><td>81</td></tr>
+                <tr><td>Rafael Silva3</td><td><input type="checkbox" class="email" value="rafael.silva3@exemplo.com"> rafael.silva3@exemplo.com</td><td>81</td></tr>
+                <tr><td>Sofia Almeida3</td><td><input type="checkbox" class="email" value="sofia.almeida3@exemplo.com"> sofia.almeida3@exemplo.com</td><td>81</td></tr>
+                <tr><td>Thiago Costa3</td><td><input type="checkbox" class="email" value="thiago.costa3@exemplo.com"> thiago.costa3@exemplo.com</td><td>81</td></tr>
+                <tr><td>Vitória Santos3</td><td><input type="checkbox" class="email" value="vitoria.santos3@exemplo.com"> vitoria.santos3@exemplo.com</td><td>81</td></tr>
+                <tr><td>Alexandre Pereira3</td><td><input type="checkbox" class="email" value="alexandre.pereira3@exemplo.com"> alexandre.pereira3@exemplo.com</td><td>81</td></tr>
+                <tr><td>Bruna Oliveira3</td><td><input type="checkbox" class="email" value="bruna.oliveira3@exemplo.com"> bruna.oliveira3@exemplo.com</td><td>81</td></tr>
+                <tr><td>Cláudio Ferreira3</td><td><input type="checkbox" class="email" value="claudio.ferreira3@exemplo.com"> claudio.ferreira3@exemplo.com</td><td>81</td></tr>
+                <tr><td>Débora Mendes3</td><td><input type="checkbox" class="email" value="debora.mendes3@exemplo.com"> debora.mendes3@exemplo.com</td><td>81</td></tr>
+                <tr><td>Evandro Rocha3</td><td><input type="checkbox" class="email" value="evandro.rocha3@exemplo.com"> evandro.rocha3@exemplo.com</td><td>81</td></tr>
+                <tr><td>Fábio Barbosa3</td><td><input type="checkbox" class="email" value="fabio.barbosa3@exemplo.com"> fabio.barbosa3@exemplo.com</td><td>81</td></tr>
+                <tr><td>Gustavo Gomes3</td><td><input type="checkbox" class="email" value="gustavo.gomes3@exemplo.com"> gustavo.gomes3@exemplo.com</td><td>81</td></tr>
+                <tr><td>Ingrid Dias3</td><td><input type="checkbox" class="email" value="ingrid.dias3@exemplo.com"> ingrid.dias3@exemplo.com</td><td>81</td></tr>
+                <tr><td>Juliana Ribeiro3</td><td><input type="checkbox" class="email" value="juliana.ribeiro3@exemplo.com"> juliana.ribeiro3@exemplo.com</td><td>81</td></tr>
+                <tr><td>Leonardo Teixeira3</td><td><input type="checkbox" class="email" value="leonardo.teixeira3@exemplo.com"> leonardo.teixeira3@exemplo.com</td><td>81</td></tr>
+            
+                <!-- Turma 91 -->
+                <tr><td>Ana Carvalho3</td><td><input type="checkbox" class="email" value="ana.carvalho3@exemplo.com"> ana.carvalho3@exemplo.com</td><td>91</td></tr>
+                <tr><td>Beatriz Martins3</td><td><input type="checkbox" class="email" value="beatriz.martins3@exemplo.com"> beatriz.martins3@exemplo.com</td><td>91</td></tr>
+                <tr><td>Carlos Azevedo3</td><td><input type="checkbox" class="email" value="carlos.azevedo3@exemplo.com"> carlos.azevedo3@exemplo.com</td><td>91</td></tr>
+                <tr><td>Daniel Castro3</td><td><input type="checkbox" class="email" value="daniel.castro3@exemplo.com"> daniel.castro3@exemplo.com</td><td>91</td></tr>
+                <tr><td>Eduardo Borges3</td><td><input type="checkbox" class="email" value="eduardo.borges3@exemplo.com"> eduardo.borges3@exemplo.com</td><td>91</td></tr>
+                <tr><td>Fernanda Vieira3</td><td><input type="checkbox" class="email" value="fernanda.vieira3@exemplo.com"> fernanda.vieira3@exemplo.com</td><td>91</td></tr>
+                <tr><td>Gabriel Moreira3</td><td><input type="checkbox" class="email" value="gabriel.moreira3@exemplo.com"> gabriel.moreira3@exemplo.com</td><td>91</td></tr>
+                <tr><td>Helena Pinto3</td><td><input type="checkbox" class="email" value="helena.pinto3@exemplo.com"> helena.pinto3@exemplo.com</td><td>91</td></tr>
+                <tr><td>Isabela Nunes3</td><td><input type="checkbox" class="email" value="isabela.nunes3@exemplo.com"> isabela.nunes3@exemplo.com</td><td>91</td></tr>
+                <tr><td>João Correia3</td><td><input type="checkbox" class="email" value="joao.correia3@exemplo.com"> joao.correia3@exemplo.com</td><td>91</td></tr>
+                <tr><td>Karina Lopes3</td><td><input type="checkbox" class="email" value="karina.lopes3@exemplo.com"> karina.lopes3@exemplo.com</td><td>91</td></tr>
+                <tr><td>Lucas Farias3</td><td><input type="checkbox" class="email" value="lucas.farias3@exemplo.com"> lucas.farias3@exemplo.com</td><td>91</td></tr>
+                <tr><td>Mariana Campos3</td><td><input type="checkbox" class="email" value="mariana.campos3@exemplo.com"> mariana.campos3@exemplo.com</td><td>91</td></tr>
+                <tr><td>Natália Moura3</td><td><input type="checkbox" class="email" value="natalia.moura3@exemplo.com"> natalia.moura3@exemplo.com</td><td>91</td></tr>
+                <tr><td>Otávio Rodrigues3</td><td><input type="checkbox" class="email" value="otavio.rodrigues3@exemplo.com"> otavio.rodrigues3@exemplo.com</td><td>91</td></tr>
+                <tr><td>Paula Freire3</td><td><input type="checkbox" class="email" value="paula.freire3@exemplo.com"> paula.freire3@exemplo.com</td><td>91</td></tr>
+                <tr><td>Rafael Nogueira3</td><td><input type="checkbox" class="email" value="rafael.nogueira3@exemplo.com"> rafael.nogueira3@exemplo.com</td><td>91</td></tr>
+                <tr><td>Sofia Prado3</td><td><input type="checkbox" class="email" value="sofia.prado3@exemplo.com"> sofia.prado3@exemplo.com</td><td>91</td></tr>
+                <tr><td>Thiago Batista3</td><td><input type="checkbox" class="email" value="thiago.batista3@exemplo.com"> thiago.batista3@exemplo.com</td><td>91</td></tr>
+                <tr><td>Vitória Duarte3</td><td><input type="checkbox" class="email" value="vitoria.duarte3@exemplo.com"> vitoria.duarte3@exemplo.com</td><td>91</td></tr>
+                <tr><td>Alexandre Pires3</td><td><input type="checkbox" class="email" value="alexandre.pires3@exemplo.com"> alexandre.pires3@exemplo.com</td><td>91</td></tr>
+                <tr><td>Bruna Reis3</td><td><input type="checkbox" class="email" value="bruna.reis3@exemplo.com"> bruna.reis3@exemplo.com</td><td>91</td></tr>
+                <tr><td>Cláudio Cunha3</td><td><input type="checkbox" class="email" value="claudio.cunha3@exemplo.com"> claudio.cunha3@exemplo.com</td><td>91</td></tr>
+                <tr><td>Débora Viana3</td><td><input type="checkbox" class="email" value="debora.viana3@exemplo.com"> debora.viana3@exemplo.com</td><td>91</td></tr>
+                <tr><td>Evandro Leite3</td><td><input type="checkbox" class獻="email" value="evandro.leite3@exemplo.com"> evandro.leite3@exemplo.com</td><td>91</td></tr>
+                <tr><td>Fábio Matos3</td><td><input type="checkbox" class="email" value="fabio.matos3@exemplo.com"> fabio.matos3@exemplo.com</td><td>91</td></tr>
+                <tr><td>Gustavo Dantas3</td><td><input type="checkbox" class="email" value="gustavo.dantas3@exemplo.com"> gustavo.dantas3@exemplo.com</td><td>91</td></tr>
+                <tr><td>Ingrid Lobo3</td><td><input type="checkbox" class="email" value="ingrid.lobo3@exemplo.com"> ingrid.lobo3@exemplo.com</td><td>91</td></tr>
+                <tr><td>Juliana Franco3</td><td><input type="checkbox" class="email" value="juliana.franco3@exemplo.com"> juliana.franco3@exemplo.com</td><td>91</td></tr>
+                <tr><td>Leonardo Lima3</td><td><input type="checkbox" class="email" value="leonardo.lima3@exemplo.com"> leonardo.lima3@exemplo.com</td><td>91</td></tr>
+            
+                <!-- Turma 111 -->
+                <tr><td>Ana Silva4</td><td><input type="checkbox" class="email" value="ana.silva4@exemplo.com"> ana.silva4@exemplo.com</td><td>111</td></tr>
+                <tr><td>Beatriz Costa4</td><td><input type="checkbox" class="email" value="beatriz.costa4@exemplo.com"> beatriz.costa4@exemplo.com</td><td>111</td></tr>
+                <tr><td>Carlos Santos4</td><td><input type="checkbox" class="email" value="carlos.santos4@exemplo.com"> carlos.santos4@exemplo.com</td><td>111</td></tr>
+                <tr><td>Daniel Lima4</td><td><input type="checkbox" class="email" value="daniel.lima4@exemplo.com"> daniel.lima4@exemplo.com</td><td>111</td></tr>
+                <tr><td>Eduardo Pereira4</td><td><input type="checkbox" class="email" value="eduardo.pereira4@exemplo.com"> eduardo.pereira4@exemplo.com</td><td>111</td></tr>
+                <tr><td>Fernanda Oliveira4</td><td><input type="checkbox" class="email" value="fernanda.oliveira4@exemplo.com"> fernanda.oliveira4@exemplo.com</td><td>111</td></tr>
+                <tr><td>Gabriel Almeida4</td><td><input type="checkbox" class="email" value="gabriel.almeida4@exemplo.com"> gabriel.almeida4@exemplo.com</td><td>111</td></tr>
+                <tr><td>Helena Souza4</td><td><input type="checkbox" class="email" value="helena.souza4@exemplo.com"> helena.souza4@exemplo.com</td><td>111</td></tr>
+                <tr><td>Isabela Ferreira4</td><td><input type="checkbox" class="email" value="isabela.ferreira4@exemplo.com"> isabela.ferreira4@exemplo.com</td><td>111</td></tr>
+                <tr><td>João Mendes4</td><td><input type="checkbox" class="email" value="joao.mendes4@exemplo.com"> joao.mendes4@exemplo.com</td><td>111</td></tr>
+                <tr><td>Karina Rocha4</td><td><input type="checkbox" class="email" value="karina.rocha4@exemplo.com"> karina.rocha4@exemplo.com</td><td>111</td></tr>
+                <tr><td>Lucas Barbosa4</td><td><input type="checkbox" class="email" value="lucas.barbosa4@exemplo.com"> lucas.barbosa4@exemplo.com</td><td>111</td></tr>
+                <tr><td>Mariana Gomes4</td><td><input type="checkbox" class="email" value="mariana.gomes4@exemplo.com"> mariana.gomes4@exemplo.com</td><td>111</td></tr>
+                <tr><td>Natália Dias4</td><td><input type="checkbox" class="email" value="natalia.dias4@exemplo.com"> natalia.dias4@exemplo.com</td><td>111</td></tr>
+                <tr><td>Otávio Ribeiro4</td><td><input type="checkbox" class="email" value="otavio.ribeiro4@exemplo.com"> otavio.ribeiro4@exemplo.com</td><td>111</td></tr>
+                <tr><td>Paula Teixeira4</td><td><input type="checkbox" class="email" value="paula.teixeira4@exemplo.com"> paula.teixeira4@exemplo.com</td><td>111</td></tr>
+                <tr><td>Rafael Carvalho4</td><td><input type="checkbox" class="email" value="rafael.carvalho4@exemplo.com"> rafael.carvalho4@exemplo.com</td><td>111</td></tr>
+                <tr><td>Sofia Martins4</td><td><input type="checkbox" class="email" value="sofia.martins4@exemplo.com"> sofia.martins4@exemplo.com</td><td>111</td></tr>
+            
+                <!-- Turma 82 -->
+                <tr><td>Marcos Vinicius</td><td><input type="checkbox" class="email" value="marcos.vinicius@exemplo.com"> marcos.vinicius@exemplo.com</td><td>82</td></tr>
+                <tr><td>Camila Torres</td><td><input type="checkbox" class="email" value="camila.torres@exemplo.com"> camila.torres@exemplo.com</td><td>82</td></tr>
+                <tr><td>Rodrigo Almeida</td><td><input type="checkbox" class="email" value="rodrigo.almeida@exemplo.com"> rodrigo.almeida@exemplo.com</td><td>82</td></tr>
+                <tr><td>Patrícia Santos</td><td><input type="checkbox" class="email" value="patricia.santos@exemplo.com"> patricia.santos@exemplo.com</td><td>82</td></tr>
+                <tr><td>Renato Costa</td><td><input type="checkbox" class="email" value="renato.costa@exemplo.com"> renato.costa@exemplo.com</td><td>82</td></tr>
+                <tr><td>Larissa Mendes</td><td><input type="checkbox" class="email" value="larissa.mendes@exemplo.com"> larissa.mendes@exemplo.com</td><td>82</td></tr>
+                <tr><td>Bruno Ferreira</td><td><input type="checkbox" class="email" value="bruno.ferreira@exemplo.com"> bruno.ferreira@exemplo.com</td><td>82</td></tr>
+            
+                <!-- Turma 121 -->
+                <tr><td>Vanessa Lima</td><td><input type="checkbox" class="email" value="vanessa.lima@exemplo.com"> vanessa.lima@exemplo.com</td><td>121</td></tr>
+                <tr><td>Matheus Oliveira</td><td><input type="checkbox" class="email" value="matheus.oliveira@exemplo.com"> matheus.oliveira@exemplo.com</td><td>121</td></tr>
+                <tr><td>Letícia Souza</td><td><input type="checkbox" class="email" value="leticia.souza@exemplo.com"> leticia.souza@exemplo.com</td><td>121</td></tr>
+                <tr><td>Felipe Ribeiro</td><td><input type="checkbox" class="email" value="felipe.ribeiro@exemplo.com"> felipe.ribeiro@exemplo.com</td><td>121</td></tr>
+                <tr><td>Carolina Dias</td><td><input type="checkbox" class="email" value="carolina.dias@exemplo.com"> carolina.dias@exemplo.com</td><td>121</td></tr>
+                <tr><td>Pedro Henrique</td><td><input type="checkbox" class="email" value="pedro.henrique@exemplo.com"> pedro.henrique@exemplo.com</td><td>121</td></tr>
+                <tr><td>Jéssica Almeida</td><td><input type="checkbox" class="email" value="jessica.almeida@exemplo.com"> jessica.almeida@exemplo.com</td><td>121</td></tr>
+            
+                <!-- Turma 131 -->
+                <tr><td>Ricardo Silva</td><td><input type="checkbox" class="email" value="ricardo.silva@exemplo.com"> ricardo.silva@exemplo.com</td><td>131</td></tr>
+                <tr><td>Tatiana Rocha</td><td><input type="checkbox" class="email" value="tatiana.rocha@exemplo.com"> tatiana.rocha@exemplo.com</td><td>131</td></tr>
+                <tr><td>André Barbosa</td><td><input type="checkbox" class="email" value="andre.barbosa@exemplo.com"> andre.barbosa@exemplo.com</td><td>131</td></tr>
+                <tr><td>Luana Gomes</td><td><input type="checkbox" class="email" value="luana.gomes@exemplo.com"> luana.gomes@exemplo.com</td><td>131</td></tr>
+                <tr><td>Vinícius Castro</td><td><input type="checkbox" class="email" value="vinicius.castro@exemplo.com"> vinicius.castro@exemplo.com</td><td>131</td></tr>
+                <tr><td>Priscila Azevedo</td><td><input type="checkbox" class="email" value="priscila.azevedo@exemplo.com"> priscila.azevedo@exemplo.com</td><td>131</td></tr>
+            </tbody>
+        </table>
+    </section>
+<script src="lista.js"></script>
+
+</body>
+</html>

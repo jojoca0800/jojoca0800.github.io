@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="fundamental1.css">
+    <title>Lista de E-mails</title>
+</head>
+<body>
+    <div id="particles-js"></div> <!-- stats - count particles -->
+  <div class="count-particles"> <span class="js-count-particles">--</span></div> <!-- particles.js lib - https://github.com/VincentGarreau/particles.js -->
+  <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script> <!-- stats.js lib -->
+  <script src="https://threejs.org/examples/js/libs/stats.min.js"></script>
+    <header>
+        <div class="form-group">
+            <label for="paginaSelect">Escolha uma página:</label>
+            <br>
+            <select id="paginaSelect" onchange="redirecionarPagina()">
+                <option value="">-- Escolha uma Página --</option>
+                <option value="index.html">Geral</option>
+                <option value="fundamental1.html"> Turma 61 </option>
+                <option value="fundamental2.html"> Turma 71 </option>
+                <option value="fundamental3.html"> Turma 81 </option>
+                <option value="fundamental4.html"> Turma 82 </option>
+                <option value="fundamental5.html"> Turma 91 </option>
+                <option value="fundamental6.html"> Turma 111 </option>
+                <option value="fundamental7.html"> Turma 121 </option>
+                <option value="fundamental8.html"> Turma 131 </option>
+            </select>
+        
+            <script>
+                function redirecionarPagina() {
+                    const select = document.getElementById('paginaSelect');
+                    const url = select.value; // Obtém o valor selecionado (URL)
+                    if (url) {
+                        window.location.href = url; // Redireciona para a página
+                    }
+                }
+            </script>
+        </div>
+    </header>
+    <section id="email">
+        <h2>SELECIONE OS EMAILS: Turma 121 </h2>
+        <button id="lixo" onclick="desmarcarTodos()">🚮</button>
+        <button class="btn-danger" onclick="removerSelecionados()">Excluir Email Selecionado</button>
+        <button id="todos" onclick="marcarTodos()">✅</button>
+        <br><br>
+        <button onclick="redirecionarGmail()">Enviar E-mail</button>
+       
+        <br><br>
+        <table>
+            <thead>
+                <tr>
+                    <th>Nomes</th>
+                    <th>Email</th>
+                    <th>Turma</th>
+                </tr>
+            </thead>
+            <tbody id="emailTableBody">
+            </tbody>
+        </table>
+        <br><br><br>
+        <script>
+        function carregarDados() {
+    const tableBody = document.getElementById('emailTableBody');
+    const emails = JSON.parse(localStorage.getItem('emails')) || [];
+    const emailsTurma61 = emails.filter(entry => entry.turma === "121");
+
+    tableBody.innerHTML = ""; // Limpa a tabela antes de carregar
+
+    emailsTurma61.forEach(entry => {
+        const newRow = document.createElement('tr');
+        let emailContent = '';
+        const emailList = Array.isArray(entry.emails) ? entry.emails : (entry.email ? [entry.email] : []);
+        emailList.forEach(email => {
+            emailContent += `<input type="checkbox" class="email" value="${email}"> ${email} `;
+        });
+        newRow.innerHTML = `
+            <td>${entry.name}</td>
+            <td>${emailContent}</td>
+            <td>${entry.turma}</td>
+        `;
+        tableBody.appendChild(newRow);
+    });
+}
+          
+            document.addEventListener('DOMContentLoaded', carregarDados);
+        </script>
+        <script src="turmas.js"></script>
+    </section>
+</body>
+</html>

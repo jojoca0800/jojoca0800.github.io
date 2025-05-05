@@ -1,0 +1,408 @@
+/* Basic Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: sans-serif; /* Placeholder font */
+    line-height: 1.6;
+    color: #333;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px 0;
+}
+
+/* Header */
+header {
+    background-color: #e2e3e6;
+    border-bottom: 1px solid #eee;
+    padding: 10px 0;
+}
+
+header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header .logo img {
+    max-height: 50px; /* Adjust as needed */
+}
+
+header nav ul {
+    list-style: none;
+    display: flex;
+}
+
+header nav ul li {
+    margin-left: 20px;
+}
+
+header nav ul li a {
+    text-decoration: none;
+    color: #555;
+    font-weight: bold;
+    padding: 5px 10px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+header nav ul li a:hover,
+header nav ul li a.active { /* Add active class logic with JS if needed */
+    background-color: #f0f0f0; /* Placeholder hover/active style */
+    color: #E65100; /* Orange color inspired by reference */
+}
+
+.wpp{
+    width: 45px;
+  
+   
+}
+.insta{
+    width: 32px;
+    margin-bottom: 5px;
+}
+.face{
+    width: 45px;
+
+}
+
+/* Hero Section */
+.hero {
+    background: url('../images/hero_background.jpeg') no-repeat center center/cover; /* Updated background */
+    min-height: 70vh; /* Adjust height */
+    display: flex;
+    align-items: center;
+    position: relative; /* For positioning the form */
+    color: #fff; /* Assuming text over image needs contrast */
+}
+
+.hero .container {
+    display: flex;
+    justify-content: flex-end; /* Align form to the right */
+    align-items: center;
+}
+
+.hero-text {
+    /* Text content can be added here or managed via JS if it's dynamic */
+    display: none; /* Hidden for now, focus on form */
+}
+
+.form-container {
+    background-color: rgba(255, 255, 255, 0.9); /* Semi-transparent white background */
+    padding: 30px;
+    border-radius: 8px;
+    width: 400px; /* Fixed width similar to reference */
+    max-width: 90%; /* Ensure it doesn't overflow container */
+    color: #333;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.form-container h2 {
+    color: #E65100; /* Orange color */
+    margin-bottom: 10px;
+    font-size: 1.4em; /* Adjusted size */
+    text-align: center;
+    font-weight: bold;
+}
+
+.form-container p {
+    margin-bottom: 20px;
+    text-align: center;
+    font-size: 0.9em;
+    color: #555;
+}
+
+.form-container form input,
+.form-container form select {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 1em;
+}
+
+.form-container form button {
+    width: 100%;
+    padding: 15px;
+    background-color: #007bff; /* Blue button like reference */
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-size: 1.1em;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.form-container form button:hover {
+    background-color: #0056b3;
+}
+
+/* Benefits Section */
+.benefits {
+    background-color: #f8f8f8;
+    padding: 40px 0;
+}
+
+.benefits .container {
+    display: flex;
+    justify-content: space-around;
+    text-align: center;
+    flex-wrap: wrap; /* Allow wrapping on smaller screens */
+}
+
+.benefit-item {
+    flex-basis: 18%; /* Adjust for 5 items */
+    margin-bottom: 20px;
+    /* Add styles for icons and text */
+    color: #E65100; /* Orange text */
+    font-weight: bold;
+}
+
+/* About Us Section */
+.about-us {
+    padding: 60px 0;
+    background: linear-gradient(to right, #FF8C00, #FF4500); /* Orange/Red gradient */
+    color: white;
+}
+
+
+.about-us h2 {
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 2em;
+}
+
+/* Environments Section */
+.environments {
+    padding: 60px 0;
+    background-color: #FFA500; /* Orange background */
+    text-align: center;
+}
+
+.environments h2 {
+    color: white;
+    margin-bottom: 10px;
+    font-size: 2em;
+}
+
+.environments p {
+    color: white;
+    margin-bottom: 30px;
+}
+
+.environment-gallery {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.env-item {
+    flex-basis: 23%; /* Adjust for 4 items */
+    margin-bottom: 20px;
+    background-color: #eee; /* Placeholder */
+    height: 200px; /* Placeholder */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #555;
+    border: 5px solid transparent; /* Placeholder for colored borders */
+    /* Add specific border colors later */
+    font-weight: bold;
+}
+/* Example border colors (adjust as needed) */
+.env-item:nth-child(1) { border-color: lightgreen; background-color: rgba(144, 238, 144, 0.2); }
+.env-item:nth-child(2) { border-color: lightblue; background-color: rgba(173, 216, 230, 0.2); }
+.env-item:nth-child(3) { border-color: gold; background-color: rgba(255, 215, 0, 0.2); }
+.env-item:nth-child(4) { border-color: lightcoral; background-color: rgba(240, 128, 128, 0.2); }
+
+
+/* CTA Section */
+.cta {
+    padding: 50px 0;
+    background: url('../images/cta_background.jpg') no-repeat center center/cover; /* Placeholder background */
+    text-align: center;
+    color: #333; /* Adjust based on background */
+}
+
+.cta h2 {
+    margin-bottom: 25px;
+    font-size: 1.8em;
+}
+
+.cta-button {
+    display: inline-block;
+    padding: 12px 30px;
+    background-color: #fff; /* White button */
+    color: #007bff; /* Blue text */
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 25px;
+    border: 2px solid #007bff;
+    transition: all 0.3s ease;
+}
+
+.cta-button:hover {
+    background-color: #007bff;
+    color: #fff;
+}
+
+/* Footer */
+footer {
+    background-color: #f8f8f8;
+    padding-top: 40px;
+    color: #555;
+}
+
+footer .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start; /* Align items to the top */
+    flex-wrap: wrap; /* Allow wrapping */
+    padding-bottom: 20px;
+    border-bottom: 1px solid #ddd;
+}
+
+.footer-logo img {
+    max-height: 40px; /* Adjust as needed */
+    margin-bottom: 20px; /* Space below logo on wrap */
+}
+
+.contact-info {
+    flex-basis: 30%; /* Adjust as needed */
+    margin-bottom: 20px; /* Space below info on wrap */
+}
+
+.contact-info h3 {
+    color: #E65100; /* Orange */
+    margin-bottom: 10px;
+    font-size: 1.1em;
+}
+
+.footer-social img {
+    max-height: 25px;
+    margin-right: 10px; /* Space between icons */
+}
+
+.copy-notice {
+    text-align: center;
+    padding: 15px 0;
+    font-size: 0.9em;
+    color: #777;
+}
+
+.copy-notice a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+.copy-notice a:hover {
+    text-decoration: underline;
+}
+
+/* Responsive adjustments (basic example) */
+@media (max-width: 768px) {
+    header .container {
+        flex-direction: column;
+        text-align: center;
+    }
+    header nav ul {
+        margin-top: 15px;
+        justify-content: center;
+        flex-wrap: wrap; /* Wrap nav items */
+    }
+     header nav ul li {
+        margin: 5px 10px; /* Adjust spacing for wrapped items */
+    }
+    header .social-icons {
+        margin-top: 10px;
+    }
+    .hero .container {
+        flex-direction: column;
+        justify-content: center; /* Center form when stacked */
+        padding-top: 40px; /* Add padding when stacked */
+        padding-bottom: 40px;
+    }
+    .form-container {
+        margin-top: 30px;
+        width: 90%;
+        flex-basis: auto;
+    }
+    .benefits .container,
+    .environment-gallery {
+        flex-direction: column;
+        align-items: center;
+    }
+    .benefit-item,
+    .env-item {
+        flex-basis: 80%; /* Adjust for stacked layout */
+        width: 80%;
+    }
+     footer .container {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+    .contact-info, .footer-social, .footer-logo {
+        flex-basis: auto; /* Reset basis */
+        width: 100%; /* Full width */
+        margin-bottom: 20px;
+    }
+    .footer-social img {
+         margin: 0 5px; /* Adjust spacing */
+    }
+}
+
+
+/* Add styles for benefit icons */
+.benefit-icon {
+    max-height: 40px; /* Adjust size as needed */
+    margin-bottom: 10px;
+    display: block; /* Center the icon */
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Adjust environment gallery item styles */
+.env-item {
+    flex-basis: 23%; /* Adjust for 4 items */
+    margin-bottom: 20px;
+    background-color: transparent; /* Remove placeholder background */
+    height: auto; /* Adjust height based on content */
+    display: flex;
+    flex-direction: column; /* Stack image and text */
+    align-items: center;
+    justify-content: center;
+    color: white; /* Text color over orange background */
+    border: 5px solid transparent; /* Placeholder for colored borders */
+    font-weight: bold;
+    text-align: center;
+}
+
+.env-item img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin-bottom: 10px; /* Space between image and text */
+    border: 3px solid; /* Apply border color here */
+}
+
+/* Apply specific border colors to images */
+.env-item:nth-child(1) img { border-color: lightgreen; }
+.env-item:nth-child(2) img { border-color: lightblue; }
+.env-item:nth-child(3) img { border-color: gold; }
+.env-item:nth-child(4) img { border-color: lightcoral; }
+
+/* Remove placeholder text color */
+.env-item p {
+    color: white; /* Ensure text is visible on orange background */
+}
+

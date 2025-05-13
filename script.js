@@ -30,6 +30,14 @@ document.querySelectorAll('header nav a[href^="#"]').forEach(anchor => {
 
   function nextImage() {
     currentIndex = (currentIndex === totalImages - 1) ? 0 : currentIndex + 1;
+
+
+ const menuToggle = document.querySelector('.menu-toggle');
+  const navList = document.querySelector('.nav-list');
+
+  menuToggle.addEventListener('click', () => {
+    navList.classList.toggle('active');
+  });
     updateCarousel();
   }
   setInterval(() => {

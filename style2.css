@@ -373,6 +373,37 @@ footer .container {
     }
 }
 @media (max-width: 480px) {
+     .menu-toggle {
+    display: block;
+  }
+
+  nav {
+    width: 100%;
+  }
+
+  .nav-list {
+    display: none;
+    flex-direction: column;
+    background-color: #e9e7e7;
+    border-top: 1px solid #ccc;
+    width: 100%;
+  }
+
+  .nav-list li {
+    margin: 10px 0;
+    text-align: center;
+  }
+
+  .nav-list.active {
+    display: flex;
+  }
+
+.wpp{ width: 0px; } .insta{ width: 0px; margin-bottom: 0px; } .face{ width: 0px; }
+  header .container {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
     header .logo img {
         max-height: 50px;
     }
@@ -383,7 +414,7 @@ footer .container {
     }
 
     .social-icons img {
-        width: 30px;
+        width: 0px;
     }
 
     .carousel {
@@ -397,11 +428,6 @@ footer .container {
     .about-us p {
         font-size: 1em;
     }
-
-    .maps iframe {
-        height: 300px;
-    }
-}
 
     .maps iframe {
         height: 300px;

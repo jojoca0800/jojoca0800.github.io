@@ -55,7 +55,14 @@ document.querySelectorAll('header nav a[href^="#"]').forEach(anchor => {
 
     // Fechar ao clicar fora da imagem
     lightbox.addEventListener('click', (e) => {
+        
         if (e.target === lightbox) {
             closeLightbox();
         }
     });
+ const menuToggle = document.querySelector('.menu-toggle');
+  const navList = document.querySelector('.nav-list');
+
+  menuToggle.addEventListener('click', () => {
+    navList.classList.toggle('active');
+  });

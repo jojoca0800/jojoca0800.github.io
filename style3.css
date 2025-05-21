@@ -1,0 +1,644 @@
+/* Basic Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+  
+body {
+    font-family: sans-serif;
+    line-height: 1.6;
+    background-color: #e9e7e7;
+    color: #333;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 5px 0;
+}
+.container1 {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px 0;
+}
+
+/* Header */
+header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: #e9e7e7;
+    z-index: 1000;
+    border-bottom: 1px solid #eee;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+.form-group {
+    margin: 5px 10px; /* Alinha com o margin dos outros itens da nav */
+    display: flex;
+    align-items: center;
+}
+/* 1. Remover borda ao selecionar produtos */
+select {
+  border: none; /* Remove a borda */
+  outline: none; /* Remove o contorno */
+}
+
+/* 2. Alterar a cor de fundo da aba `option` */
+select {
+  background-color: #1a1a1a; /* Substitua #1a1a1a pela cor do seu header */
+  color: #ffffff; /* Mantém o texto visível */
+}
+
+/* Estilizando os `option` */
+option {
+  background-color:  #e1dede; /* Mesma cor do header */
+  color: #000000; /* Texto claro */
+  border: none; /* Remove bordas dos options */
+  border-radius: 0; /* Remove o arredondamento */
+
+}
+
+/* 3. Remover o arredondamento das bordas do menu */
+select {
+  border-radius: 0px; /* Remove arredondamento */
+  appearance: none; /* Remove estilo padrão do navegador */
+  -webkit-appearance: none; /* Para navegadores WebKit (Chrome, Safari) */
+  -moz-appearance: none; /* Para navegadores Firefox */
+}
+.titulopp{
+    color: #e1dede;
+    background-color:#e1dede ;
+    font-size: 16px;
+    font-family: Palatino, serif;
+    font-weight: bold;
+    padding: 10px 30px;
+    cursor: pointer;
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background-image: url('data:image/svg+xml;utf8,<svg fill="%232b2b2b" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M7 10l5 5 5-5z"/></svg>');
+    background-repeat: no-repeat;
+    background-position: right 10px center;
+}
+#paginaSelect {
+    width: 200px; /* Ajuste o tamanho conforme necessário */
+    height: 40px;
+    margin-top: -12px; /* Ajuste a posição vertical */
+    border: none; /* Remove a borda padrão */
+    background-color: transparent; /* Fundo transparente para combinar com o header */
+    color: #2b2b2b; /* Mesma cor dos links */
+    font-size: 16px; /* Mesmo tamanho de fonte dos links */
+    font-family: Palatino, serif; /* Mesma fonte dos links */
+    font-weight: bold; /* Mesmo peso da fonte dos links */
+    padding: 10px 30px; /* Padding semelhante aos links */
+    cursor: pointer; /* Indica que é clicável */
+    transition: background-color 0.3s ease; /* Mesmo efeito de transição dos links */
+    appearance: none; /* Remove o estilo padrão do select em navegadores */
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background-image: url('data:image/svg+xml;utf8,<svg fill="%232b2b2b" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M7 10l5 5 5-5z"/></svg>'); /* Adiciona uma seta personalizada */
+    background-repeat: no-repeat;
+    background-position: right 10px center;
+  
+}
+
+#paginaSelect:hover {
+    background-color: #adacac; /* Mesmo fundo de hover dos links */
+    color: #000; 
+    border: none;
+    font-size: 16px;
+}
+
+#paginaSelect:focus {
+border: none;
+    background-color: #d1cece00; /* Mesmo fundo de ativo dos links */
+ 
+}
+header .container1 {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+header .logo img {
+    max-height: 75px;
+    width: auto;
+    margin-left: -14px;
+}
+
+.contato {
+    margin-left: -20px;
+}
+header nav {
+    margin-top: 15px;
+    margin-left: -20px;
+}
+header nav ul {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+header nav ul li {
+    margin: 5px 10px;
+}
+
+header nav ul li a {
+    text-decoration: none;
+    color: #2b2b2b;
+    font-weight: bold;
+    padding: 53px 25px;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+    font-family: Palatino, serif;
+    margin-left: -10px;
+}
+
+header nav ul li a:hover
+{
+    background-color: #adacac;
+    color: rgb(0, 0, 0);
+    width: 400px;
+}
+header nav ul li a.active {
+    background-color: #959191;
+    color: #000;
+}
+.font{
+    margin-top:-60px;
+}
+.fontone{
+    margin-top: 0px;
+}
+.wpp{ width: 45px; } .insta{ width: 32px; margin-bottom: 6px; } .face{ width: 45px; }
+
+.uwpp{ width: 45px; } .uinsta{ width: 32px; margin-bottom: 6px; } .uface{ width: 45px; }
+/* Carousel */
+.carousel {
+    position: relative;
+    width: 100%;
+    max-width: 1280px;
+    height: 60vw;
+    max-height: 600px;
+    margin: 150px auto 50px;
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+.carousel-images {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.5s ease-in-out;
+}
+
+.carousel-images {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.5s ease-in-out;
+}
+
+.carousel-images img {
+  width: 100%;
+  height: 100%;
+  flex-shrink: 0;
+  object-fit: cover;
+}
+
+.controls {
+  position: absolute;
+  top: 50%;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  transform: translateY(-50%);
+  padding: 0 20px;
+}
+
+.control-btn {
+  background-color: rgba(70, 35, 35, 0);
+  width: 600px;
+  height: 700px;
+  color: white;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  font-size: 18px;
+  border-radius: 500px;
+}
+
+
+/* Products Section */
+.products1 {
+    margin-top: 190px;
+    text-align: center;
+     padding: 60px 0;
+}
+.products {
+    text-align: center;
+    padding: 60px 0;
+}
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin: 2rem 0;
+}
+
+.product-item {
+    border: 1px solid #2b2b2b;
+    padding: 1rem;
+    border-radius: 5px;
+    transition: box-shadow 0.3s ease;
+    background-color: #d6d1c9;
+}
+
+.product-item:hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+}
+
+.product-item img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    margin-bottom: 1rem;
+}
+
+.product-item h3 {
+    font-size: 1.2rem;
+    color: #403f40;
+    font-family: Palatino, serif;
+}
+
+.button {
+    display: inline-block;
+    background-color: #5e5f63;
+    color: white;
+    padding: 0.8rem 1.5rem;
+    border-radius: 5px;
+    font-weight: bold;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+    font-family: Palatino, serif;
+     font-size: 20px;
+}
+
+.button:hover {
+    background-color: #262428;
+}
+
+/* About Us Section */
+.about-us {
+    padding: 60px 0;
+    background: linear-gradient(to right, #686868, #e9e7e7);
+    color: white;
+    border: 1px solid #2b2b2b;
+}
+
+.about-us h2 {
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 3em;
+    font-family: 'Brush Script MT', cursive;
+}
+
+.about-us p {
+    font-size: 1.2em;
+    font-family: 'Brush Script MT', cursive;
+}
+
+/* Environments Section */
+.environments {
+    padding: 60px 0;
+    background-color: #e9e7e7;
+    border: 1px solid #2b2b2b;
+    text-align: center;
+}
+
+.environments h2 {
+    color: #000;
+    margin-bottom: 10px;
+    font-size: 2em;
+}
+
+.environments p {
+    color: #000;
+    margin-bottom: 30px;
+}
+.container p{
+      font-family: Palatino, serif;
+}
+.titulo{
+    font-size: 60px;
+
+}
+.products1 h1{
+    font-size: 60px;
+      font-family: Palatino, serif;
+}
+.container h2{
+    font-size: 40px;
+      font-family: Palatino, serif;
+}
+.maps {
+    width: 100%;
+    border: 1px solid #2b2b2b;
+    padding: 1rem;
+}
+
+.maps iframe {
+    width: 100%;
+    height: 450px;
+    border: 0;
+}
+/* Lightbox container */
+.lightbox {
+    display: none;
+    position: fixed;
+    z-index: 9999;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    justify-content: center;
+    align-items: center;
+}
+
+/* Lightbox image */
+.lightbox img {
+    max-width: 90%;
+    max-height: 90%;
+    border-radius: 10px;
+}
+
+/* Close button */
+.lightbox-close {
+    position: absolute;
+    top: 30px;
+    right: 40px;
+    font-size: 40px;
+    color: white;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+/* Footer */
+footer {
+    background-color: #f8f8f8;
+    padding: 40px 0 15px;
+    color: #555;
+}
+
+footer .container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #ddd;
+}
+
+.footer-logo img {
+    max-height: 40px;
+    width: auto;
+}
+
+.contact-info {
+    flex-basis: 30%;
+    margin-bottom: 20px;
+}
+
+.contact-info h3 {
+    color: #96d326;
+    margin-bottom: 10px;
+    font-size: 1.1em;
+}
+
+.copy-notice {
+    text-align: center;
+    padding: 15px 0;
+    font-size: 0.9em;
+    color: #777;
+}
+
+.copy-notice a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+.copy-notice a:hover {
+    text-decoration: underline;
+}
+.menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 2rem;
+  color: #333;
+  cursor: pointer;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .menu-toggle {
+    display: block;
+  }
+.font{
+    margin-top: 20px;
+    width: 100%;
+}
+.fontone{
+    margin-top: 20px;
+    width: 100%;
+}
+.uwpp{ width: 45px; } .uinsta{ width: 32px; margin-bottom: 6px; } .uface{ width: 45px; }
+  nav {
+    width: 100%;
+  }
+
+  .nav-list {
+    display: none;
+    flex-direction: column;
+    background-color: #e9e7e7;
+    border-top: 1px solid #ccc;
+    width: 100%;
+  }
+
+  .nav-list li {
+    margin: 10px 0;
+    text-align: center;
+  }
+
+  .nav-list.active {
+    display: flex;
+  }
+
+  .social-icons {
+    width: 0;
+    height: 0;
+  }
+.wpp{ width: 0px; } .insta{ width: 0px; margin-bottom: 0px; } .face{ width: 0px; }
+  header .container {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  header nav ul li a {
+    text-decoration: none;
+    width: 100%;
+    color: #2b2b2b;
+    font-weight: bold;
+    padding: 10px 150px;
+    font-size: 20px;
+    transition: background-color 0.3s ease;
+    font-family: Palatino, URW Palladio L, serif;
+  }
+    .carousel {
+        height: 80vw;
+        margin-top: 120px;
+    }
+
+    .products, .about-us, .environments {
+        padding: 2rem 0;
+    }
+
+.products1 {
+    padding: 4rem 0;
+    text-align: center;
+    margin-top: 90px;
+}
+    .product-grid {
+        grid-template-columns: 1fr;
+    }
+
+    footer .container {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .contact-info {
+        flex-basis: 100%;
+        width: 100%;
+    }
+
+    .social-icons {
+        margin: 10px 0;
+    }
+}
+@media (max-width: 480px) {
+     .menu-toggle {
+    display: block;
+  }
+.font{
+    margin-top: 20px;
+    width: 100%;
+}
+.fontone{
+    margin-top: 20px;
+    width: 100%;
+}
+.uwpp{ width: 45px; } .uinsta{ width: 32px; margin-bottom: 6px; } .uface{ width: 45px; }
+  nav {
+    width: 100%;
+  }
+
+  .nav-list {
+    display: none;
+    flex-direction: column;
+    background-color: #e9e7e7;
+    border-top: 1px solid #ccc;
+    width: 100%;
+  }
+
+  .nav-list li {
+    margin: 10px 0;
+    text-align: center;
+  }
+  
+  nav {
+    width: 100%;
+  }
+
+  .nav-list {
+    display: none;
+    flex-direction: column;
+    background-color: #e9e7e7;
+    border-top: 1px solid #ccc;
+    width: 100%;
+  }
+
+  .nav-list li {
+    margin: 10px 0;
+    text-align: center;
+  }
+
+  .nav-list.active {
+    display: flex;
+  }
+
+.wpp{ width: 0px; } .insta{ width: 0px; margin-bottom: 0px; } .face{ width: 0px; }
+  header .container {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+    header .logo img {
+        max-height: 50px;
+    }
+
+    header nav ul li a {
+        font-size: 16px;
+        padding: 8px 10px;
+    }
+
+    .social-icons img {
+        width: 0px;
+    }
+.products1 {
+    padding: 4rem 0;
+    text-align: center;
+    margin-top: 90px;
+}
+    .carousel {
+        margin-top: 100px;
+    }
+
+    .about-us h2, .environments h2 {
+        font-size: 1.8em;
+    }
+
+    .about-us p {
+        font-size: 1em;
+    }
+
+    .maps iframe {
+        height: 300px;
+    }
+}
+    .maps iframe {
+        height: 300px;
+    }
+@media (max-width: 768px) {
+    #paginaSelect {
+        width: 100%; /* Ocupa toda a largura disponível */
+        font-size: 20px; /* Reduz levemente o tamanho da fonte */
+        padding: 8px 10px; 
+        text-align: center;/* Ajusta o padding */
+    }
+}
+
+@media (max-width: 480px) {
+    #paginaSelect {
+        font-size: 16px; 
+        text-align: center;/** Reduz ainda mais para telas pequenas */
+    }
+}

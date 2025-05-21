@@ -569,7 +569,7 @@ footer .container {
 
 @media (max-width: 480px) {
     #paginaSelect {
-        font-size: 20px; 
+        font-size: 16px; 
         text-align: center;/** Reduz ainda mais para telas pequenas */
     }
 }

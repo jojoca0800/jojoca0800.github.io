@@ -1,4 +1,3 @@
-// Perguntas do quiz
 const questions = [
   {
     id: 1,
@@ -56,7 +55,92 @@ const questions = [
     correctAnswer: 1,
     explanation: "As aves são consideradas parte dos répteis modernos, mais especificamente do clado dos arcossauros.",
   },
+  {
+    id: 9,
+    question: "Qual é a principal função da glândula uropigiana nas aves?",
+    options: ["Produzir som", "Lubrificar as penas", "Regular temperatura", "Absorver nutrientes", "Estimular a digestão"],
+    correctAnswer: 1,
+    explanation: "A glândula uropigiana secreta uma substância oleosa usada para impermeabilizar e manter as penas.",
+  },
+  {
+    id: 10,
+    question: "Como as aves eliminam o excesso de nitrogênio do organismo?",
+    options: ["Ureia", "Amoníaco", "Ácido úrico", "Ácido lático", "Creatinina"],
+    correctAnswer: 2,
+    explanation: "As aves excretam ácido úrico, que é menos tóxico e economiza água, sendo ideal para vida aérea e terrestre.",
+  },
+  {
+    id: 11,
+    question: "Qual parte do sistema digestivo das aves tritura os alimentos ingeridos?",
+    options: ["Papo", "Moela", "Intestino delgado", "Esôfago", "Cloaca"],
+    correctAnswer: 1,
+    explanation: "A moela é uma estrutura muscular que tritura alimentos, frequentemente com auxílio de pequenas pedras.",
+  },
+  {
+    id: 12,
+    question: "Por que as aves têm visão tão desenvolvida?",
+    options: ["Por causa do olfato fraco", "Para compensar a audição", "Por viverem no escuro", "Para caçar e voar com precisão", "Para regular a temperatura"],
+    correctAnswer: 3,
+    explanation: "A visão é essencial para voo e caça, sendo extremamente aguçada nas aves.",
+  },
+  {
+    id: 13,
+    question: "Qual das opções abaixo é uma ave de hábito exclusivamente noturno?",
+    options: ["Gavião", "Andorinha", "Beija-flor", "Coruja", "Tucano"],
+    correctAnswer: 3,
+    explanation: "As corujas são aves adaptadas à vida noturna, com audição e visão altamente desenvolvidas.",
+  },
+  {
+    id: 14,
+    question: "Qual função as penas têm além do voo?",
+    options: ["Excreção", "Digestão", "Regulação térmica", "Filtração", "Produção de hormônios"],
+    correctAnswer: 2,
+    explanation: "As penas ajudam a manter o calor corporal, além de proteger e auxiliar no voo.",
+  },
+  {
+    id: 15,
+    question: "Como é chamado o grupo das aves que não voam?",
+    options: ["Carinatas", "Neognatas", "Ratitas", "Anseriformes", "Paleognatas"],
+    correctAnswer: 2,
+    explanation: "Ratitas são aves que perderam a capacidade de voar, como avestruzes e emas.",
+  },
+  {
+    id: 16,
+    question: "Qual estrutura ajuda as aves a se orientarem durante migrações?",
+    options: ["Siringe", "Sistema linfático", "Magnetorecepção", "Cloaca", "Glândula uropigiana"],
+    correctAnswer: 2,
+    explanation: "Muitas aves usam a magnetorecepção, percebendo o campo magnético da Terra para navegação.",
+  },
+  {
+    id: 17,
+    question: "As aves possuem bexiga urinária?",
+    options: ["Sim, como os mamíferos", "Não, eliminam fezes e urina juntas", "Apenas as aquáticas", "Apenas machos", "Apenas em filhotes"],
+    correctAnswer: 1,
+    explanation: "Aves não possuem bexiga urinária; eliminam excretas nitrogenadas junto às fezes pela cloaca.",
+  },
+  {
+    id: 18,
+    question: "O papo das aves tem qual função principal?",
+    options: ["Respirar", "Regular temperatura", "Armazenar alimento", "Produzir som", "Filtrar água"],
+    correctAnswer: 2,
+    explanation: "O papo armazena temporariamente o alimento antes de passar pelo estômago químico e moela.",
+  },
+  {
+    id: 19,
+    question: "Como as aves conseguem voar em altitudes elevadas com pouco oxigênio?",
+    options: ["Têm mais glóbulos vermelhos", "Usam brânquias pulmonares", "Possuem sacos aéreos e respiração eficiente", "Filtram o ar com a cloaca", "Têm pulmões maiores que os mamíferos"],
+    correctAnswer: 2,
+    explanation: "Os sacos aéreos permitem uma ventilação contínua e eficiente, essencial para voar em grandes altitudes.",
+  },
+  {
+    id: 20,
+    question: "O que indica que as aves descendem de dinossauros terópodes?",
+    options: ["Presença de penas e ossos pneumáticos", "Pele escamosa e veneno", "Mandíbula ossificada", "Excreção de ureia", "Cauda longa e óssea"],
+    correctAnswer: 0,
+    explanation: "As penas e ossos pneumáticos são características que reforçam a origem das aves nos dinossauros terópodes.",
+  }
 ]
+
 
 // Estado do jogo
 let currentQuestion = 0

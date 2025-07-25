@@ -584,7 +584,7 @@ section {
 
     .hamburger {
         display: flex;
-        margin-right: -180px;
+        margin-right: -200px;
     }
 
     .section-title {

@@ -579,7 +579,7 @@ section {
     }
 
       .logo {
-        margin-right: 160px;
+        margin-right: 140px;
     }
 
     .hamburger {
@@ -596,7 +596,7 @@ section {
     }
 
      .hero-content {
-        margin-top: 5rem;
+        margin-top: 4rem;
     }
 
     .pricing-item {
@@ -623,6 +623,6 @@ section {
        width: 100%;
        margin-right: -160px;
        padding: 2rem 2rem;
-       margin-top: 100px;
+       margin-top: 97px;
     }
 }

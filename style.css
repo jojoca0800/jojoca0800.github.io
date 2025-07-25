@@ -579,12 +579,12 @@ section {
     }
 
       .logo {
-        margin-right: 80px;
+        margin-right: 40px;
     }
 
     .hamburger {
         display: flex;
-        margin-right: -200px;
+        margin-right: -180px;
     }
 
     .section-title {
